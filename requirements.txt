@@ -1,19 +1,13 @@
-langchain
-langgraph
-tavily-python
-polygon
-langchain_community
+langchain_astradb
+pandas
 langchain_google_genai
-streamlit
-fastapi[all]
-uvicorn
-langchain-pinecone
-pypdf
+fastapi 
+uvicorn 
+python-multipart
+jinja2
+python-dotenv 
+langchain 
+langchain_core 
 langchain_groq
-ipykernel
-numpy
-langchain-tavily
-transformers
-langchain_openai
 
 -e .
