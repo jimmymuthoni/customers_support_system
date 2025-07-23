@@ -6,7 +6,7 @@ def get_requirements() -> List:
     requirements: List[str] = []
     try:
         with open("requirements.txt", 'r') as file:
-            lines = file.readline()
+            lines = file.readlines()
             for line in lines:
                 requirement = line.strip()
                 if requirement and requirement != "-e .":
