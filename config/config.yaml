@@ -1,0 +1,13 @@
+astra_db:
+  collection_name: "eccomercedata"
+
+embedding_model:
+  provider: "openai"
+  model_name: "text-embedding-3-large"
+
+llm:
+    provider: "groq"
+    model_name: "deepseek-r1-distill-llama-70b"
+
+retriever:
+  top_k: 10
