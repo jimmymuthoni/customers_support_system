@@ -20,7 +20,7 @@ class ModelLoader:
         validate environment variables
         """
         required_vars = ["OPENAI_API_KEY", "QROQ_API_KEY"]
-        missing_vars = [var for var in required_vars is not os.getenv()]
+        missing_vars = [var for var in required_vars if not os.getenv(vars)]
         if missing_vars:
             raise EnvironmentError(f"Missing environment variavles: {missing_vars}")
      
