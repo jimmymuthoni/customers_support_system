@@ -2,8 +2,8 @@ astra_db:
   collection_name: "eccomercedata"
 
 embedding_model:
-  provider: "openai"
-  model_name: "text-embedding-3-large"
+    provider: "openai"
+    model_name: "text-embedding-3-large"
 
 llm:
     provider: "groq"
