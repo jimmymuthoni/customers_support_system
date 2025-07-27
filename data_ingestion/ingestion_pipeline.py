@@ -4,7 +4,8 @@ import pandas as pd
 from dotenv import load_dotenv
 from typing import List, Tuple
 from langchain_core.documents import Document
-from langchain_astradb import AstraDBStore
+from astrapy.info import VectorServiceOptions
+from langchain_astradb import AstraDBStore, AstraDBVectorStore
 from utils.model_loader import ModelLoader
 from custom_exceptions.exceptions import CustomerSupportException
 from utils.config_loader import load_config
@@ -92,13 +93,17 @@ class DataIngestion:
         store documens into astraDB vector store.
         """
         collection_name = self.config['astra_db']['collection_name']
-        vstore = AstraDBStore(
+        vector_store = AstraDBVectorStore(
             embedding = self.model_loader.load_embeddings(),
             collection_name = collection_name,
             api_endpoint = self.db_api_endpoint,
             token = self.application_token,
             namespace = self.db_keyspace,
         )
+        vector_store.add_documents(documents)
+        inserted_ids = vector_store.add_documents(documents)
+        print(f"Successfully inserted {len(inserted_ids)} documents into AstraDB")
+        return vector_store, inserted_ids
     
     def run_pipeline(self):
         """
@@ -113,7 +118,7 @@ class DataIngestion:
 
         print(f"\nSample search for query: '{query}'")
         for res in results:
-            print(f"Content: {res.page_content}\nMetadata: {res:metadata}\n")
+            print(f"Content: {res.page_content}\nMetadata: {res.metadata}\n")
 
 if __name__ == "__main__":
     ingestion = DataIngestion()
