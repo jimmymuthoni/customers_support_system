@@ -1,5 +1,5 @@
 astra_db:
-  collection_name: "ecommercedata"
+  collection_name: "ecommerce_data_v2"
 
 embedding_model:
     provider: "openai"
