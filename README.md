@@ -12,6 +12,7 @@ Built with FastAPI, LangChain, AstraDB,OpenAI embeddings this bot delivers conci
 - **REST API:** Built with **FastAPI** for easy integration.
 - **Configurable Prompting:** Uses a **custom LangChain prompt** to control response style.
 - **Interactive UI** HTML & CSS
+- **AstraDB** To store vector embeddings.
 
 ---
 
