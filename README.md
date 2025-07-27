@@ -15,3 +15,5 @@ Built with FastAPI, LangChain, AstraDB,OpenAI embeddings this bot delivers conci
 
 ---
 
+### Sample Ouput:
+![Chatbot_response](https://github.com/jimmymuthoni/customers_support_system/blob/c0896c3032bd526181db410550b5611ef4bf3532/query3.png)
